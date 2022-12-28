@@ -10,11 +10,12 @@ class Solution{
     void printNos(int N)
     {
         //Your code here
-        if(N>1){
-        printNos(N-1);
-        cout<<N<<" ";
+        if(N==1)
+        {
+            cout<<N<<" ";
+            return;
         }
-        else
+        printNos(N-1);
         cout<<N<<" ";
         
     }
