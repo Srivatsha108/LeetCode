@@ -31,8 +31,10 @@ class Solution {
     int MissingNumber(int array[], int n) {
         // Your Code Here
         int s=0;
-        for(int i=0;i<n-1;i++)
-        s+=array[i];
-        return n*(n+1)/2 - s;
+        for(int i=1;i<n;i++){
+        s-=array[i-1];s+=i;
+        }
+        s+=n;
+        return s;
     }
 }
