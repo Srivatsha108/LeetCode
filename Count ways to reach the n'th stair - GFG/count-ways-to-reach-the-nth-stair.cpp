@@ -23,8 +23,15 @@ class Solution
     int countWays(int n)
     {
         // your code here
-        vector<int>dp(n+1,-1);
-        return find(n,dp);
+        // vector<int>dp(n+1,-1);
+        // return find(n,dp);
+        vector<int>v(n);
+        v[0]=1,v[1]=2;
+        for(int i=2;i<n;i++)
+        {
+            v[i]=(v[i-1]+v[i-2])%mod;
+        }
+        return v[n-1]%mod;
     }
         
 };
