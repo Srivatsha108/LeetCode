@@ -25,7 +25,7 @@ public:
         // }
         // return a[l]==target?l:-1;
         int l=0,h=a.size()-1;
-        while(l<=h)
+        while(l<h)
         {
             int m=(l+h)/2;
             if(a[m]==target)
@@ -50,6 +50,6 @@ public:
             }
             
         }
-        return -1;
+        return a[l]==target?l:-1;
     }
 };
