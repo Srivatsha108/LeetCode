@@ -10,12 +10,10 @@ public:
             long m=l+(h-l)/2,x=0,res=0;
             for(auto i:bloomDay)
             {
-                if(i<=m)
-                    x++;
-                else 
+                if(i>m)
                     x=0;
-                if(x==k)
-                    x=0,res++;
+                else if(++x>=k)
+                    res++,x=0;
                 
             }
             if(res>=m1)
