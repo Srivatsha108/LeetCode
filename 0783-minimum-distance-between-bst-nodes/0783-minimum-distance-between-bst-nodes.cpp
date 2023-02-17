@@ -19,8 +19,9 @@ public:
         res.push_back(root->val);
         find(root->right,res);
     }
-  
+     int res=INT_MAX,pre=-1;
     int minDiffInBST(TreeNode* root) {
+        
         // queue<TreeNode*>q;
         // q.push(root);
         // while(!q.empty())
@@ -39,14 +40,25 @@ public:
         //     if(res[i+1]-res[i]<r)
         //         r=res[i+1]-res[i];
         // return r;
-          vector<int>res;
-        find(root,res);
-        int r=INT_MAX;
-        for(int i=0;i<res.size()-1;i++)
-            if(res[i+1]-res[i]<r)
-                r=res[i+1]-res[i];
-        return r;
         
+        
+        //   vector<int>res;
+        // find(root,res);
+        // int r=INT_MAX;
+        // for(int i=0;i<res.size()-1;i++)
+        //     if(res[i+1]-res[i]<r)
+        //         r=res[i+1]-res[i];
+        // return r;
+        
+        if(root->left!=NULL)
+            minDiffInBST(root->left);
+        if(pre>=0)
+            res=min(res,root->val-pre);
+        pre=root->val;
+        if(root->right!=NULL)
+            minDiffInBST(root->right);
+        
+        return res;
     }
     
     
