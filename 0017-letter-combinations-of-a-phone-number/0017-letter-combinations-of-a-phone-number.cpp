@@ -1,13 +1,13 @@
 class Solution {
 public:
-    vector<string>solve(vector<string>res,string s)
+    void solve(vector<string>&res,string s)
     {
         vector<string>temp;
         for(auto i:res)
             for(auto j:s)
                 temp.push_back(i+j);
-        // res=temp;
-        return temp;
+        res=temp;
+        // return temp;
     }
     vector<string> letterCombinations(string digits) {
         vector<string>res;
@@ -27,7 +27,7 @@ public:
 //         return res;
         for(auto i:digits)
         {
-            res=solve(res,v[i-'0']);
+            solve(res,v[i-'0']);
         }
         return res;
     }
