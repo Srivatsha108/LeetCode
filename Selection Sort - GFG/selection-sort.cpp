@@ -17,18 +17,22 @@ class Solution
     {
         // code here such that selectionSort() sorts arr[]
         selectionSort(arr,i);
+        
     }
      
     void selectionSort(int arr[], int n)
     {
        //code here
-       for(int i=0;i<n-1;i++)
+       for(int i=0;i<n;i++)
        {
+           int k=i;
            for(int j=i+1;j<n;j++)
            {
-               if(arr[j]<arr[i])
-               swap(arr[j],arr[i]);
+               if(arr[j]<arr[k])
+               k=j;
            }
+           if(k!=i)
+           swap(arr[i],arr[k]);
        }
        
     }
